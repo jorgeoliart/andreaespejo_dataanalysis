@@ -8,6 +8,7 @@ R.Version()
 
 library(dplyr) #librería: dplyr, Versión: 1.1.2, permite agrupar y resumir estadísticos
 library(ggplot2) #librería ggplot2, permite visualizar las distribuciones de datos
+library(car) #librería car, permite usar el test de Levene
 
 iccs2016 <- readRDS("iccs_2016_stu_int.rds") #importar base de datos
 
