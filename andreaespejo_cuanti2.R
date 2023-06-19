@@ -78,3 +78,6 @@ tabla_chicuadrado <- chisq.test(muestra_n2500$IS3G16B, muestra_n2500$IS3G15J)
 #convertir las variables a ser correlacionadas a data tipo "numeric"
 muestra_n2500$PV1CIV <- as.numeric(muestra_n2500$PV1CIV)
 muestra_n2500$S_POLPART <- as.numeric(muestra_n2500$S_POLPART)
+
+#correr la correlación de Pearson
+tabla_pearson <- cor.test(muestra_n2500$PV1CIV, muestra_n2500$S_POLPART)
