@@ -60,3 +60,8 @@ ggplot(muestra_n2500, aes(x = PV1CIV, fill = IS3G24G)) +
 #correr test de Levene
 resultadoLevene <- leveneTest(muestra_n2500$PV1CIV ~ muestra_n2500$IS3G24G)
 
+#correr ANOVA para comparar en puntaje, según el valor en IS3G24G
+modeloAnova <- aov(PV1CIV ~ IS3G24G, data = muestra_n2500) #Ajustar el modelo
+tablaAnova <- anova(modeloAnova) #Generar tabla ANOVA
+
+
