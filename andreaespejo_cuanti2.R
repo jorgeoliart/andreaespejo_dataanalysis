@@ -36,6 +36,8 @@ muestra_medidas_concivico <- muestra_n2500 %>%
 #PREGUNTA 3
 #comparar medias con prueba ANOVA
 
+muestra_n2500$IS3G24G <- as.factor(muestra_n2500$IS3G24G) # convertir la variable IS3G24G a categórica
+
 #verificar supuestos: normalidad de cada grupo
 #crear cuatro submuestras según el valor en PV1C
 womenpriority_1 <- muestra_n2500[muestra_n2500$IS3G24G == 1, ]
@@ -48,5 +50,8 @@ shapiro_wp1 <- shapiro.test(womenpriority_1$PV1CIV)
 shapiro_wp2 <- shapiro.test(womenpriority_2$PV1CIV)
 shapiro_wp3 <- shapiro.test(womenpriority_3$PV1CIV)
 shapiro_wp4 <- shapiro.test(womenpriority_4$PV1CIV)
+
+
+
 
 
