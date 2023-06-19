@@ -70,4 +70,8 @@ tablaAnova <- anova(modeloAnova) #Generar tabla ANOVA
 muestra_n2500$IS3G16B <- as.factor(muestra_n2500$IS3G16B) #convertir la variable de participación ciudadana en la escuela
 muestra_n2500$IS3G15J <- as.factor(muestra_n2500$IS3G15J) #convertir la variable de participación ciudadana fuera de la escuela
 
+#correr prueba de chi cuadrado
+tabla_chicuadrado <- chisq.test(muestra_n2500$IS3G16B, muestra_n2500$IS3G15J)
+
+#PREGUNTA 5
 
