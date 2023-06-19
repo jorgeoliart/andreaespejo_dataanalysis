@@ -64,4 +64,10 @@ resultadoLevene <- leveneTest(muestra_n2500$PV1CIV ~ muestra_n2500$IS3G24G)
 modeloAnova <- aov(PV1CIV ~ IS3G24G, data = muestra_n2500) #Ajustar el modelo
 tablaAnova <- anova(modeloAnova) #Generar tabla ANOVA
 
+#PREGUNTA 4
+
+#convertir las variables a ser testeadas a data tipo factor
+muestra_n2500$IS3G16B <- as.factor(muestra_n2500$IS3G16B) #convertir la variable de participación ciudadana en la escuela
+muestra_n2500$IS3G15J <- as.factor(muestra_n2500$IS3G15J) #convertir la variable de participación ciudadana fuera de la escuela
+
 
