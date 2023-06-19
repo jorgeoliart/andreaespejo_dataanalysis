@@ -5,8 +5,9 @@ R.Version()
 #versión de R: 4.3.0
 
 #cargar las librerías a ser usadas
-#librería: dplyr, Versión: 1.1.2, permite agrupar y resumir estadísticos
-library(dplyr) 
+
+library(dplyr) #librería: dplyr, Versión: 1.1.2, permite agrupar y resumir estadísticos
+library(ggplot2) #librería ggplot2, permite visualizar las distribuciones de datos
 
 iccs2016 <- readRDS("iccs_2016_stu_int.rds") #importar base de datos
 
