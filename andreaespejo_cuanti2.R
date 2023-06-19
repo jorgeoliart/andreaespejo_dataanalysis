@@ -57,3 +57,6 @@ shapiro_wp4 <- shapiro.test(womenpriority_4$PV1CIV)
 ggplot(muestra_n2500, aes(x = PV1CIV, fill = IS3G24G)) +
   geom_density(alpha = 0.5)
 
+#correr test de Levene
+resultadoLevene <- leveneTest(muestra_n2500$PV1CIV ~ muestra_n2500$IS3G24G)
+
