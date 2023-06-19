@@ -52,7 +52,7 @@ shapiro_wp2 <- shapiro.test(womenpriority_2$PV1CIV)
 shapiro_wp3 <- shapiro.test(womenpriority_3$PV1CIV)
 shapiro_wp4 <- shapiro.test(womenpriority_4$PV1CIV)
 
-
-
-
+#generar gráficos de densidad
+ggplot(muestra_n2500, aes(x = PV1CIV, fill = IS3G24G)) +
+  geom_density(alpha = 0.5)
 
