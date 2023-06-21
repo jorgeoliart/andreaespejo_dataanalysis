@@ -64,7 +64,7 @@ resultadoLevene <- leveneTest(muestra_n2500$PV1CIV ~ muestra_n2500$IS3G24G)
 muestra_n2500$PV1CIV_log <- log(muestra_n2500$PV1CIV) 
 
 #correr ANOVA para comparar en puntaje, según el valor en IS3G24G
-modeloAnova <- aov(PV1CIV ~ IS3G24G, data = muestra_n2500) #Ajustar el modelo
+modeloAnova <- aov(PV1CIV_log ~ IS3G24G, data = muestra_n2500) #Ajustar el modelo
 tablaAnova <- anova(modeloAnova) #Generar tabla ANOVA
 
 #PREGUNTA 4
@@ -77,6 +77,10 @@ muestra_n2500$IS3G15J <- as.factor(muestra_n2500$IS3G15J) #convertir la variable
 tabla_chicuadrado <- chisq.test(muestra_n2500$IS3G16B, muestra_n2500$IS3G15J)
 
 #PREGUNTA 5
+
+#verificar supuesto: normalidad
+#correr prueba de shapiro-wilk respecto a S_POLPART
+shapiro_PV1CIV <- shapiro.test(muestra_n2500$S_POLPART)
 
 #convertir las variables a ser correlacionadas a data tipo "numeric"
 muestra_n2500$PV1CIV <- as.numeric(muestra_n2500$PV1CIV)
