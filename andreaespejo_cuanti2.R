@@ -67,6 +67,14 @@ muestra_n2500$PV1CIV_log <- log(muestra_n2500$PV1CIV)
 modeloAnova <- aov(PV1CIV_log ~ IS3G24G, data = muestra_n2500) #Ajustar el modelo
 tablaAnova <- anova(modeloAnova) #Generar tabla ANOVA
 
+#correr pruebas t student entre pares de grupos
+t_student_1_2 <- t.test(womenpriority_1, womenpriority_2) #t student entre g1 y g2
+t_student_1_3 <- t.test(womenpriority_1, womenpriority_3) #t student entre g1 y g3
+t_student_1_4 <- t.test(womenpriority_1, womenpriority_4) #t student entre g1 y g4
+t_student_2_3 <- t.test(womenpriority_2, womenpriority_3) #t student entre g2 y g3
+t_student_2_4 <- t.test(womenpriority_2, womenpriority_4) #t student entre g2 y g4
+t_student_3_4 <- t.test(womenpriority_3, womenpriority_4) #t student entre g3 y g4
+
 #PREGUNTA 4
 
 #convertir las variables a ser testeadas a data tipo factor
