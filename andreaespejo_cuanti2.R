@@ -84,3 +84,7 @@ muestra_n2500$S_POLPART <- as.numeric(muestra_n2500$S_POLPART)
 
 #correr la correlación de Pearson
 tabla_pearson <- cor.test(muestra_n2500$PV1CIV, muestra_n2500$S_POLPART)
+
+#generar un gráfico de dispersión
+plot(muestra_n2500$PV1CIV, muestra_n2500$S_POLPART, main = "Gráfico de dispersión", xlab = "Conocimiento cívico", ylab = "Participación política activa esperada")
+
