@@ -88,3 +88,5 @@ tabla_pearson <- cor.test(muestra_n2500$PV1CIV, muestra_n2500$S_POLPART)
 #generar un gráfico de dispersión
 plot(muestra_n2500$PV1CIV, muestra_n2500$S_POLPART, main = "Gráfico de dispersión", xlab = "Conocimiento cívico", ylab = "Participación política activa esperada")
 
+#generar una línea de regresión
+abline(lm(muestra_n2500$S_POLPART ~ muestra_n2500$PV1CIV), col = "red")
