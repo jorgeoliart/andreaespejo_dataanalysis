@@ -67,13 +67,21 @@ muestra_n2500$PV1CIV_log <- log(muestra_n2500$PV1CIV)
 modeloAnova <- aov(PV1CIV_log ~ IS3G24G, data = muestra_n2500) #Ajustar el modelo
 tablaAnova <- anova(modeloAnova) #Generar tabla ANOVA
 
-#correr pruebas t student entre pares de grupos
-t_student_1_2 <- t.test(womenpriority_1, womenpriority_2) #t student entre g1 y g2
-t_student_1_3 <- t.test(womenpriority_1, womenpriority_3) #t student entre g1 y g3
-t_student_1_4 <- t.test(womenpriority_1, womenpriority_4) #t student entre g1 y g4
-t_student_2_3 <- t.test(womenpriority_2, womenpriority_3) #t student entre g2 y g3
-t_student_2_4 <- t.test(womenpriority_2, womenpriority_4) #t student entre g2 y g4
-t_student_3_4 <- t.test(womenpriority_3, womenpriority_4) #t student entre g3 y g4
+#comparar pares de grupos con t de student
+
+#antes, normalizar cuatro submuestras
+womenpriority_1$PV1CIV_log <- log(womenpriority_1$PV1CIV)
+womenpriority_2$PV1CIV_log <- log(womenpriority_2$PV1CIV)
+womenpriority_3$PV1CIV_log <- log(womenpriority_3$PV1CIV)
+womenpriority_4$PV1CIV_log <- log(womenpriority_4$PV1CIV)
+
+#correr pruebas de t de student entre pares de grupos
+t_student_1_2 <- t.test(womenpriority_1$PV1CIV_log, womenpriority_2$PV1CIV_log) #t student entre g1 y g2
+t_student_1_3 <- t.test(womenpriority_1$PV1CIV_log, womenpriority_3$PV1CIV_log) #t student entre g1 y g3
+t_student_1_4 <- t.test(womenpriority_1$PV1CIV_log, womenpriority_4$PV1CIV_log) #t student entre g1 y g4
+t_student_2_3 <- t.test(womenpriority_2$PV1CIV_log, womenpriority_3$PV1CIV_log) #t student entre g2 y g3
+t_student_2_4 <- t.test(womenpriority_2$PV1CIV_log, womenpriority_4$PV1CIV_log) #t student entre g2 y g4
+t_student_3_4 <- t.test(womenpriority_3$PV1CIV_log, womenpriority_4$PV1CIV_log) #t student entre g3 y g4
 
 #PREGUNTA 4
 
