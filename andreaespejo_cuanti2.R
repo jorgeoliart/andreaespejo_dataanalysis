@@ -53,15 +53,14 @@ shapiro_wp2 <- shapiro.test(womenpriority_2$PV1CIV)
 shapiro_wp3 <- shapiro.test(womenpriority_3$PV1CIV)
 shapiro_wp4 <- shapiro.test(womenpriority_4$PV1CIV)
 
-#generar gráficos de densidad
-ggplot(muestra_n2500, aes(x = PV1CIV, fill = IS3G24G)) +
-  geom_density(alpha = 0.5)
+#generar gráfico para observar medias y varianzas
+boxplot_distribucion <- boxplot(PV1CIV ~ IS3G24G, data = muestra_n2500, ylab = "Conocimiento cívico", xlab = "Actitud hacia la maternidad como el rol prioritario de las mujeres")
 
 #correr test de Levene
 resultadoLevene <- leveneTest(muestra_n2500$PV1CIV ~ muestra_n2500$IS3G24G)
 
 #normalizar la distribución variable dependiente
-muestra_n2500$PV1CIV_log <- log(muestra_n2500$PV1CIV) 
+muestra_n2500$PV1CIV_log <- log(muestra_n2500$PV1CIV)
 
 #correr ANOVA para comparar en puntaje, según el valor en IS3G24G
 modeloAnova <- aov(PV1CIV_log ~ IS3G24G, data = muestra_n2500) #Ajustar el modelo
