@@ -12,3 +12,6 @@ library(dplyr) #cargar librería: dplyr, Versión: 1.1.2, que permite agrupar y 
 #importar base de datos original.dta
 base_original <- read_dta('original.dta')
 
+#importar base de datos DEMRE
+base_demre <- read_dta('zzzzz_demre_sies_elites.dta')
+
