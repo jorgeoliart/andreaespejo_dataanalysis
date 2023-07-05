@@ -15,3 +15,20 @@ base_original <- read_dta('original.dta')
 #importar base de datos DEMRE
 base_demre <- read_dta('zzzzz_demre_sies_elites.dta')
 
+#filtrar para crear base de datos reducida, incluyendo solamente las variables relevantes
+base_reducida <- base_original[, c('codigocarrera', 
+                                   'nombre_institucion', 
+                                   'codigoinstitucion', 
+                                   'nombre_carrera', 
+                                   'oc_comunarica', 
+                                   'oc_ingresoalto', 
+                                   'oc_ocuppadre', 
+                                   'oc_educmadre', 
+                                   'oc_pagado', 
+                                   'op_psu', 
+                                   'op_nem', 
+                                   'dc_ingreso', 
+                                   'dc_empleabilidad', 
+                                   'dp_elitepol', 
+                                   'dp_eliteeco', 
+                                   'dp_eliteint')]
