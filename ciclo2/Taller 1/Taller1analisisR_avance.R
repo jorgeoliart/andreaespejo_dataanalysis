@@ -59,3 +59,15 @@ modelo5 <- lm (p ~ g)
 summary(modelo5)
 
 # PREGUNTA #4
+
+# Intervalo de 95% de confiabilidad para parámetros en primer modelo
+confint(modelo1, level = 0.95)
+
+# Intervalo de 95% de confiabilidad para parámetros en segundo modelo
+confint(modelo2, level = 0.95)
+
+# PREGUNTA #5
+
+prediccion1 <- predict(modelo2, newdata = data.frame(t = -2, a = 3))
+prediccion2 <- predict(modelo2, newdata = data.frame(t = -2, a = 7))
+aumento <- prediccion2 - prediccion1
