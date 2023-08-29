@@ -40,20 +40,20 @@ cor.test(p,a) #Correlación puntaje - autopercepción
 
 #Primer modelo
 modelo1 <- lm(p ~ t + a + g)
-coefficients(modelo1)
+summary(modelo1)
 
 # Segundo modelo
 modelo2 <- lm(p ~ t)
-coefficients(modelo2)
+summary(modelo2)
 
 # Tercer modelo
 modelo3 <- lm(p ~ a)
-coefficients(modelo3)
+summary(modelo3)
 
 # Cuarto modelo
-modelo4 <- lm(p ~ g)
-coefficients(modelo4)
+modelo4 <- lm (p ~ t + a)
+summary(modelo4)
 
 # Quinto modelo
-modelo5 <- lm (p ~ t + a)
-coefficients(modelo5)
+modelo5 <- lm (p ~ g)
+summary(modelo5)
