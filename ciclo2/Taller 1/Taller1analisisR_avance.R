@@ -43,17 +43,19 @@ modelo1 <- lm(p ~ t + a + g)
 summary(modelo1)
 
 # Segundo modelo
-modelo2 <- lm(p ~ t)
+modelo2 <- lm (p ~ t + a)
 summary(modelo2)
 
 # Tercer modelo
-modelo3 <- lm(p ~ a)
+modelo3 <- lm(p ~ t)
 summary(modelo3)
 
 # Cuarto modelo
-modelo4 <- lm (p ~ t + a)
+modelo4 <- lm(p ~ a)
 summary(modelo4)
 
 # Quinto modelo
 modelo5 <- lm (p ~ g)
 summary(modelo5)
+
+# PREGUNTA #4
